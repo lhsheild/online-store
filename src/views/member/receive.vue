@@ -99,7 +99,13 @@ import {getAddress, addAddress, updateAddress, delAddress} from '../../api/api'
     export default {
         data () {
             return {
-                updateIndex: '',
+                updateIndex: {
+                  province: '', //省
+                  city: '', // 市
+                  area: '', // 区
+                  receiveName: '', // 收件人姓名
+                  addr: '', // 详细地址
+                },
                 newInfoEmpty: {
                     province: '', //省
                     city: '', // 市
@@ -155,7 +161,7 @@ import {getAddress, addAddress, updateAddress, delAddress} from '../../api/api'
                 this.receiveInfoArr[this.currentIndex].city = data.value;
             },
             updateArea (data) {
-                this.receiveInfoArr[this.currentIndex].district = data.value;
+                this.receiveInfoArr[this.currentIndex].area = data.value;
             },
 
 
@@ -166,12 +172,12 @@ import {getAddress, addAddress, updateAddress, delAddress} from '../../api/api'
                 this.newInfo.city = data.value;
             },
             getArea (data) {
-                this.newInfo.district = data.value;
+                this.newInfo.area = data.value;
             },
             getReceiveInfo() { //获取收件人信息
                 getAddress().then((response)=> {
                     console.log(response.data);
-                    this.receiveInfoArr = response.data;
+                    this.receiveInfoArr = response.data.results;
 
                 }).catch(function (error) {
                     console.log(error);
