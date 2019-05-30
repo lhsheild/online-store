@@ -213,7 +213,8 @@ export default {
             params:{}
           }).then((response)=> {
                     console.log('获取菜单'+response.data);
-                    this.allMenuLabel = response.data.results;
+                    this.allMenuLabel = response.data;
+                    debugger
                 })
                 .catch(function (error) {
                   console.log(error);

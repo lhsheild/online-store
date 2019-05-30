@@ -177,7 +177,7 @@ import {getAddress, addAddress, updateAddress, delAddress} from '../../api/api'
             getReceiveInfo() { //获取收件人信息
                 getAddress().then((response)=> {
                     console.log(response.data);
-                    this.receiveInfoArr = response.data.results;
+                    this.receiveInfoArr = response.data;
 
                 }).catch(function (error) {
                     console.log(error);

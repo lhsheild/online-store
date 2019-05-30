@@ -5,6 +5,7 @@ import {getShopCarts} from '../api/api';
 // 全局引入vue
 import Vue from 'vue';
 import Axios from 'axios';
+
 Vue.prototype.$http = Axios;
 
 
@@ -19,13 +20,13 @@ export default {
   [types.SET_SHOPLIST](state) { // 设置购物车数据
     // token = cookie.getCookie('token')
     if (cookie.getCookie('token') != null) {
-      getShopCarts().then((response)=> {
+      getShopCarts().then((response) => {
         // 更新store数据
         state.goods_list.goods_list = response.data;
-        console.log(response.data);
+        console.log('更新store数据'+response.data);
         let totalPrice = 0;
         response.data.forEach(function(entry) {
-          totalPrice += entry.goods.shop_price*entry.nums;
+          totalPrice += entry.goods.shop_price * entry.nums;
         });
         state.goods_list.totalPrice = totalPrice;
       }).catch(function(error) {

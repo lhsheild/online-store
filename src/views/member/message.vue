@@ -153,7 +153,7 @@
       getMessage () { //获取留言
         getMessages().then((response) => {
           console.log(response.data);
-          this.messageAll = response.data.results;
+          this.messageAll = response.data;
         }).catch(function (error) {
           console.log(error);
         });

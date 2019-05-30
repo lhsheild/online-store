@@ -114,6 +114,7 @@
         //this.goods_list = response.data;
         var totalPrice = 0
         this.goods.goods_list = response.data;
+        debugger
         response.data.forEach(function(entry) {
           totalPrice += entry.goods.shop_price*entry.nums
           console.log(entry.goods.shop_price);

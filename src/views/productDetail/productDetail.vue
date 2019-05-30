@@ -174,6 +174,7 @@
           .then((response) => {
             console.log();
             this.proDetail = response.data;
+            debugger
             this.curShow = this.proDetail.images[0];
           }).catch(function (error) {
           console.log(error);
