@@ -2,7 +2,8 @@ import axios from 'axios';
 
 
 const host = 'http://shop.projectsedu.com';
-const localhost = 'http://127.0.0.1:8000';
+// const localhost = 'http://127.0.0.1:8000';
+const localhost = 'http://113.16.255.12:11032';
 
 // 获取商品类别信息
 export const queryCategorygoods = (params) => {
